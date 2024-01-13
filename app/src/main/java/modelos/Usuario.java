@@ -1,20 +1,34 @@
 package modelos;
 
+import java.text.SimpleDateFormat;
+
+import java.util.Date;
+
 public class Usuario {
-    private String id;
+    private int id;
     private String name;
     private String email;
     private String username;
     private String password;
     private String rol;
+    private double salary;
+    private String sector;
+    private Date fIngreso;
+    
+    public String getFormattedIngreso(){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return dateFormat.format(this.fIngreso);
+    }
+    
+    
     public Usuario() {
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -52,8 +66,32 @@ public class Usuario {
     public String getRol(){
         return rol;
     }
-    void setRol(String rol) {
+    public void setRol(String rol) {
       this.rol=rol;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public String getSector() {
+        return sector;
+    }
+
+    public void setSector(String sector) {
+        this.sector = sector;
+    }
+
+    public Date getFIngreso() {
+        return fIngreso;
+    }
+    
+    public void setFIngreso(Date fIngreso) {
+        this.fIngreso = fIngreso;
     }
     
 }

@@ -26,11 +26,15 @@ public class HomeControlador implements ActionListener{
     private HomeView hv;
     private TableRowSorter<TableModel> sorter;
     
+    private EmpleadosControlador empleadosControlador;
+    
     public HomeControlador(HomeView hv){
         this.hv=hv;
         this.hv.getButtonSalir().addActionListener(this);
         inicializarTabla();
+        IncializarControladores();
         configurarListeners();
+        
     }
 
     @Override
@@ -57,16 +61,31 @@ public class HomeControlador implements ActionListener{
         });
          
     }
-
+    private void IncializarControladores(){
+        empleadosControlador=new EmpleadosControlador(hv);
+    }
     private void configurarListeners() {
         // Agregar listeners para cada JLabel del menú lateral
         agregarListenerJLabel(hv.getjLabelStock(),0);
-        
         agregarListenerJLabel(hv.getjLabelVentas(),1);
         agregarListenerJLabel(hv.getjLabelPedidos(),2);
         agregarListenerJLabel(hv.getjLabelProveedores(),3);
         agregarListenerJLabel(hv.getjLabelEmpleados(),4);
-        agregarListenerJLabel(hv.getjLabelConfiguracion(),5);
+        //evento del tabbed
+        hv.getjTabbedPaneStock().addChangeListener(e -> {
+            int selectedIndex = hv.getjTabbedPaneStock().getSelectedIndex();
+            String tabText = hv.getjTabbedPaneStock().getTitleAt(selectedIndex);
+            System.out.println("Texto de la pestaña seleccionada: " + tabText);
+            
+            switch(tabText){
+                case "empleados":{
+                    empleadosControlador.inicializarTabla();
+                    break;
+                }
+                default:{break;}
+            }
+        });
+        
         
         hv.getButtonBuscarStock().addActionListener(new ActionListener(){
             @Override
@@ -96,14 +115,15 @@ public class HomeControlador implements ActionListener{
             }
             
         });
-        
     }
     
     private void seleccionarPestana(int index) {
         // Seleccionar la pestaña correspondiente en el JTabbedPane
         hv.getjTabbedPaneStock().setSelectedIndex(index);
+        
+       
     }
-    
+    //listener del menu lateral
     private void agregarListenerJLabel(JLabel label,int index){
         label.addMouseListener(new MouseAdapter(){
             @Override
