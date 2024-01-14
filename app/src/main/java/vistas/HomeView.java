@@ -74,8 +74,8 @@ public class HomeView extends javax.swing.JFrame {
         jTextField9 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
+        jTextFieldBorrarUsuario = new javax.swing.JTextField();
+        jButtonBorrarUsuario = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableEmpleados = new javax.swing.JTable();
         jTextFieldAgregarSector = new javax.swing.JTextField();
@@ -453,13 +453,13 @@ public class HomeView extends javax.swing.JFrame {
 
         jLabel8.setText("Borrar Empleado");
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldBorrarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                jTextFieldBorrarUsuarioActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Buscar");
+        jButtonBorrarUsuario.setText("Buscar");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -489,8 +489,8 @@ public class HomeView extends javax.swing.JFrame {
                                             .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jButton5))
+                                            .addComponent(jTextFieldBorrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jButtonBorrarUsuario))
                                         .addGap(10, 10, 10)))))
                         .addGap(49, 49, 49))
                     .addGroup(jPanel11Layout.createSequentialGroup()
@@ -514,10 +514,10 @@ public class HomeView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldBorrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5)
+                    .addComponent(jButtonBorrarUsuario)
                     .addComponent(jButton4))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -715,9 +715,9 @@ public class HomeView extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jLabelStockMouseClicked
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void jTextFieldBorrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBorrarUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_jTextFieldBorrarUsuarioActionPerformed
 
     private void jButtonAgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarUsuarioActionPerformed
         // TODO add your handling code here:
@@ -763,9 +763,9 @@ public class HomeView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButtonAdd;
     private javax.swing.JButton jButtonAgregarUsuario;
+    private javax.swing.JButton jButtonBorrarUsuario;
     private javax.swing.JButton jButtonBuscarEmpleado;
     private javax.swing.JButton jButtonBuscarStock;
     private javax.swing.JButton jButtonSalir;
@@ -805,7 +805,6 @@ public class HomeView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPaneStock;
     private javax.swing.JTable jTableEmpleados;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField jTextFieldAgregarEmail;
     private javax.swing.JTextField jTextFieldAgregarNombre;
@@ -813,6 +812,7 @@ public class HomeView extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldAgregarSector;
     private javax.swing.JTextField jTextFieldAgregarSueldo;
     private javax.swing.JTextField jTextFieldAgregarUsername;
+    private javax.swing.JTextField jTextFieldBorrarUsuario;
     private javax.swing.JTextField jTextFieldBuscarEmpleado;
     private javax.swing.JTextField jTextFieldBuscarStock;
     private javax.swing.JTable tablaStock;
@@ -926,6 +926,14 @@ public class HomeView extends javax.swing.JFrame {
 
     public void setjTextFieldAgregarUsername(String jTextFieldAgregarUsername) {
         this.jTextFieldAgregarUsername.setText(jTextFieldAgregarUsername);
+    }
+
+    public JButton getjButtonBorrarUsuario() {
+        return jButtonBorrarUsuario;
+    }
+
+    public JTextField getjTextFieldBorrarUsuario() {
+        return jTextFieldBorrarUsuario;
     }
     
 }

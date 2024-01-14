@@ -129,7 +129,21 @@ public class UsuarioDao implements AutoCloseable {
             return false;
         }
     }
-    
+    public boolean removeUsuario(int index){
+        try{
+            String query="DELETE FROM user where iduser=?";
+            try(PreparedStatement pst=conn.prepareStatement(query);){
+                pst.setInt(1, index);
+                
+                int usuariosBorrados=pst.executeUpdate();
+                
+                return usuariosBorrados > 0;
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+    }
     @Override
     public void close() throws Exception {
         ConnectionMySQL.closeConnection(conn);

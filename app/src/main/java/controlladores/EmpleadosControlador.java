@@ -93,6 +93,18 @@ public class EmpleadosControlador {
                agregarUsuario();            
             }
         });
+        hv.getjButtonBorrarUsuario().addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                boolean usuarioBorrado=borrarUsuario();
+                if(usuarioBorrado){
+                    mostrarMensaje("usuario borrado con exito");
+                }else{
+                    mostrarMensaje("no se encontro el usuario");
+                }
+            }
+            
+        });
     }
     
     public Usuario searchById(int id){
@@ -155,7 +167,29 @@ public class EmpleadosControlador {
             mostrarMensaje("verificar campos vacios");
         }
     }
-    
+    private boolean borrarUsuario(){
+        String idStr = hv.getjTextFieldBorrarUsuario().getText();
+
+        if (!idStr.isEmpty()) {
+            try{
+                int id=Integer.parseInt(idStr);
+                try(UsuarioDao userDao=new UsuarioDao();){
+            
+                    return userDao.removeUsuario(id);
+                }catch(Exception e){
+                    e.printStackTrace();
+                    return false;
+                }
+                 
+            }catch(NumberFormatException e){
+                e.printStackTrace();
+                return false;
+            }
+        } else {
+            mostrarMensaje("Debes ingresar un ID válido.");
+            return false;
+        }
+    }
     public boolean cargarDatos(String name,String email, String username, String password, double salary, String sector){
         try(UsuarioDao usuarioDao =new UsuarioDao();){
             Usuario user=new Usuario();
